@@ -1,10 +1,25 @@
 # Claude Code Ops Starter
 
-**Production-tested hooks and templates for autonomous Claude Code sessions.**
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Bash](https://img.shields.io/badge/Language-Bash-4EAA25.svg)](https://www.gnu.org/software/bash/)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Hooks-blueviolet.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-Stop babysitting your AI. These hooks let Claude Code run autonomously — catching errors, managing context, and making decisions without asking you every 5 minutes.
+**Stop babysitting your AI.** 4 production-tested hooks that let Claude Code run autonomously — catching errors, managing context, and making decisions without asking you every 5 minutes.
+
+```bash
+git clone https://github.com/yurukusa/claude-code-ops-starter.git && cd claude-code-ops-starter && bash install.sh
+```
 
 Built from 200+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) with zero manual coding.
+
+### Before vs After
+
+| Without hooks | With hooks |
+|--------------|-----------|
+| Claude asks "should I continue?" every 5 min | Claude decides and logs uncertainty |
+| Syntax errors found 50 tool calls later | Errors caught immediately after every edit |
+| Session runs out of context without warning | Staged warnings at 80/120/150 tool calls |
+| `rm -rf` executes with no warning | Destructive commands flagged before execution |
 
 ## What's Included
 
@@ -25,7 +40,7 @@ cd claude-code-ops-starter
 bash install.sh
 ```
 
-Then add the hook configuration to your `~/.claude/settings.json` (the installer prints the exact JSON).
+Then add the hook configuration to your `~/.claude/settings.json` (the installer prints the exact JSON to copy-paste).
 
 ## How the Hooks Work
 
@@ -98,9 +113,11 @@ This starter kit handles **basic autonomous operation**. If you're running multi
 
 This toolkit emerged from a real experiment: a non-engineer using Claude Code to build a complete game ([Azure Flame](https://yurukusa.itch.io/azure-flame), 15,000+ lines of Python) with minimal human intervention. Every hook in this repo solved a real problem encountered during autonomous operation.
 
-Read more about the journey:
-- [How Two AIs Consult Each Other While I Sleep](https://zenn.dev/yurukusa/articles/cc-codex-dual-agent-loop) (Zenn)
-- [I Spent $200 on AI and Made $2](https://dev.to/yurukusa/i-spent-200-on-ai-and-made-2-what-i-learned-building-a-game-with-claude-code-2b4b) (dev.to)
+Read more:
+- [4 Hooks That Let Claude Code Run Autonomously](https://dev.to/yurukusa/4-hooks-that-let-claude-code-run-autonomously-with-zero-babysitting-1748) (dev.to) — deep dive into each hook
+- [5 Design Patterns for LLM Agent Teams](https://dev.to/yurukusa/5-design-patterns-for-llm-agent-teams-from-someone-who-learned-them-the-hard-way-5f7n) (dev.to) — the patterns behind these hooks
+- [How Two AIs Consult Each Other While I Sleep](https://zenn.dev/yurukusa/articles/cc-codex-dual-agent-loop) (Zenn) — multi-agent orchestration
+- [I Spent $200 on AI and Made $2](https://dev.to/yurukusa/i-spent-200-on-ai-and-made-2-what-i-learned-building-a-game-with-claude-code-2b4b) (dev.to) — the full story
 
 ## License
 
