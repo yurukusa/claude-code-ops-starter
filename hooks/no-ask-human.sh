@@ -10,14 +10,14 @@
 # When to use: During unattended / overnight sessions where no
 # human is available to answer questions.
 #
-# Exceptions the AI should still ask about:
-#   - Billing / charges
-#   - Security risks
-#   - Irreversible data deletion
-#   - Publishing to external services
+# To disable temporarily: export CC_ALLOW_QUESTIONS=1
 # ================================================================
+
+# Allow override via environment variable
+if [ "${CC_ALLOW_QUESTIONS:-0}" = "1" ]; then
+    exit 0
+fi
 
 echo "BLOCKED: Do not ask the human." >&2
 echo "Decision order: 1) Decide yourself  2) Log uncertainty to ~/pending_for_human.md  3) Move to the next task" >&2
-echo "AskUserQuestion is only allowed for: billing, security, irreversible deletion, external publishing." >&2
 exit 1

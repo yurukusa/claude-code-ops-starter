@@ -10,6 +10,12 @@
 # ================================================================
 
 INPUT=$(cat)
+
+# jq is needed to parse the hook input; skip gracefully if missing
+if ! command -v jq >/dev/null 2>&1; then
+    exit 0
+fi
+
 COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty')
 
 # List of patterns that warrant a warning

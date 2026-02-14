@@ -36,12 +36,12 @@ Counts tool calls as a proxy for context window usage. Warns you at 3 thresholds
 - **Critical (150 calls)**: Auto-generates a checkpoint file for session handoff
 
 ### No-Ask-Human
-Blocks `AskUserQuestion` tool calls during unattended sessions. Instead of stopping to ask "which approach should I use?", the AI:
+Blocks **all** `AskUserQuestion` tool calls during unattended sessions. Instead of stopping to ask "which approach should I use?", the AI:
 1. Decides on its own
 2. Logs uncertainty to `~/pending_for_human.md`
 3. Moves to the next task
 
-Still allows questions about billing, security, and irreversible operations.
+To temporarily re-enable questions: `export CC_ALLOW_QUESTIONS=1`
 
 ### Syntax Check
 Runs after every `Edit` or `Write` tool call:
@@ -52,7 +52,33 @@ Runs after every `Edit` or `Write` tool call:
 Catches syntax errors immediately instead of discovering them 50 tool calls later.
 
 ### Decision Warn
-Scans Bash commands for dangerous patterns (`rm -rf`, `git reset --hard`, `DROP TABLE`, etc.) and prints a warning. Doesn't block by default — uncomment one line to enable hard blocking.
+Scans Bash commands for dangerous patterns (`rm -rf`, `git reset --hard`, `DROP TABLE`, etc.) and prints a warning. Doesn't block by default — uncomment one line in the script to enable hard blocking.
+
+## Dependencies
+
+- **Required**: `bash` (all hooks are shell scripts)
+- **Optional**: `jq` — used by `syntax-check.sh` and `decision-warn.sh` to parse hook input. If missing, these hooks silently skip (no errors, no crashes)
+- **Optional**: `python3` or `python` — used by `syntax-check.sh` for Python file checking. If missing, Python syntax checks are skipped
+
+Install optional dependencies:
+```bash
+# Debian/Ubuntu
+sudo apt install jq python3
+
+# macOS
+brew install jq python3
+```
+
+## Uninstall
+
+```bash
+rm ~/.claude/hooks/context-monitor.sh
+rm ~/.claude/hooks/no-ask-human.sh
+rm ~/.claude/hooks/syntax-check.sh
+rm ~/.claude/hooks/decision-warn.sh
+```
+
+Then remove the corresponding `hooks` entries from `~/.claude/settings.json`.
 
 ## Need More?
 

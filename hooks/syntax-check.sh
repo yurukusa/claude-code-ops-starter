@@ -9,6 +9,12 @@
 # ================================================================
 
 INPUT=$(cat)
+
+# jq is needed to parse the hook input; skip gracefully if missing
+if ! command -v jq >/dev/null 2>&1; then
+    exit 0
+fi
+
 FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
 
 if [[ -z "$FILE_PATH" || ! -f "$FILE_PATH" ]]; then
@@ -19,7 +25,14 @@ EXT="${FILE_PATH##*.}"
 
 case "$EXT" in
     py)
-        if python -m py_compile "$FILE_PATH" 2>&1; then
+        if command -v python3 >/dev/null 2>&1; then
+            PYTHON=python3
+        elif command -v python >/dev/null 2>&1; then
+            PYTHON=python
+        else
+            exit 0
+        fi
+        if $PYTHON -m py_compile "$FILE_PATH" 2>&1; then
             echo "Syntax OK: $FILE_PATH"
         else
             echo "SYNTAX ERROR: $FILE_PATH" >&2
