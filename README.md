@@ -95,19 +95,18 @@ rm ~/.claude/hooks/decision-warn.sh
 
 Then remove the corresponding `hooks` entries from `~/.claude/settings.json`.
 
-## Need More?
+## Need More? These 4 Hooks Are the Foundation. The Full System Is the House.
 
-This starter kit handles **basic autonomous operation**. If you're running multi-agent setups, overnight sessions, or production workflows, the full kit includes:
+This starter kit catches errors and keeps sessions running. The **full kit** turns Claude Code into an autonomous system that works overnight without you:
 
 - **Multi-agent relay** — Two AI agents (Claude Code + Codex) consulting each other in a loop
-- **Stall detection** — Automatic recovery when an agent gets stuck
+- **Stall detection & auto-recovery** — Catches drift, frozen sessions, and cascading failures
 - **Watchdog process** — Monitors agent health and auto-restarts on crash
 - **Task queue system** — YAML-based priority queue with dependency tracking
-- **20+ production hooks** — Activity logging, decision recording, error tracking, CDP safety
-- **Operational CLAUDE.md** — Battle-tested over 200 hours of real autonomous execution
-- **Setup guides** — Step-by-step for multi-agent orchestration
+- **20+ production hooks** — Activity logging, decision recording, error tracking, and more
+- **Operational playbooks** — Battle-tested across 200+ hours and 15,000 lines of autonomous code
 
-**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-kit-launch)** — saves 5+ hours/week on debugging stuck loops and recovering crashed sessions.
+**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-kit-launch&utm_content=graduate-cta)** — 15-minute setup. Your AI runs overnight while you sleep.
 
 ## Background
 
