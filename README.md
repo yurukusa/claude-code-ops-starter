@@ -107,7 +107,7 @@ This starter kit handles **basic autonomous operation**. If you're running multi
 - **Operational CLAUDE.md** — Battle-tested over 200 hours of real autonomous execution
 - **Setup guides** — Step-by-step for multi-agent orchestration
 
-**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit)** — saves 5+ hours/week on debugging stuck loops and recovering crashed sessions.
+**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-kit-launch)** — saves 5+ hours/week on debugging stuck loops and recovering crashed sessions.
 
 ## Background
 
