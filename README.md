@@ -31,6 +31,7 @@ Extracted from 200+ hours of real autonomous operation that shipped a [15,000-li
 | `hooks/decision-warn.sh` | Flags destructive commands (`rm -rf`, `git reset --hard`) before execution |
 | `templates/CLAUDE.md` | Baseline instructions for autonomous operation |
 | `tools/claude-md-generator.sh` | Interactive CLAUDE.md generator — answer 8 questions, get a tailored config |
+| `tools/risk-score.sh` | Check your autonomous operations safety in 10 seconds — scores 10 items, links to fixes |
 | `install.sh` | One-command setup |
 
 ## Quick Start
@@ -109,6 +110,22 @@ Or use defaults for a quick start:
 ```bash
 bash tools/claude-md-generator.sh --defaults --output ~/.claude/CLAUDE.md
 ```
+
+## Risk Score: How Safe Is Your Setup?
+
+Check your autonomous operations safety in 10 seconds:
+
+```bash
+bash tools/risk-score.sh
+```
+
+Or run it directly without cloning:
+
+```bash
+curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash
+```
+
+Checks 10 items (CLAUDE.md, hooks, git safety, secrets, etc.) and shows a risk score with links to fixes.
 
 ## Self-Check: Is Your Autonomous Setup Safe?
 
