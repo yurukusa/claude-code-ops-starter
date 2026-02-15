@@ -1,6 +1,8 @@
 # Claude Code Global Instructions
 
-Customize this file and place it at `~/.claude/CLAUDE.md`.
+Customize this file and place it at `~/.claude/CLAUDE.md` (global) or `<project>/CLAUDE.md` (per-project).
+
+> **Tip:** Use `bash tools/claude-md-generator.sh` to generate a project-specific version interactively.
 
 ## Autonomous Decision Rules
 
@@ -28,7 +30,20 @@ Customize this file and place it at `~/.claude/CLAUDE.md`.
 - All projects must be under git. If you find an unmanaged project, init git first
 - Commit at logical checkpoints. Messages should explain "why", not "what"
 - Before risky changes: `git checkout -b backup/before-changes-$(date +%Y%m%d-%H%M%S)`
-- Forbidden: `rm -rf`, `git reset --hard`, `git clean -fd`
+- **Forbidden**: `rm -rf`, `git reset --hard`, `git clean -fd`
+
+## External Action Safety
+
+Before any action that affects systems outside your local environment:
+1. **Consensus**: Get approval before pushing code, posting to external services, or modifying shared infrastructure
+2. **Factcheck**: Verify claims in any public-facing text — no exaggerated numbers, no unverified statistics
+3. **Scope control**: One approval = one action. Don't reuse approvals across different operations
+
+## Error Tracking
+
+- Log errors with context (what failed, why, what was tried)
+- After fixing an error, record what worked so the same mistake isn't repeated
+- When a pattern of errors emerges, create a prevention rule
 
 ## Comment Style
 

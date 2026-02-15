@@ -30,6 +30,7 @@ Extracted from 200+ hours of real autonomous operation that shipped a [15,000-li
 | `hooks/syntax-check.sh` | Auto-runs syntax verification after every file edit (Python, Shell, JSON) |
 | `hooks/decision-warn.sh` | Flags destructive commands (`rm -rf`, `git reset --hard`) before execution |
 | `templates/CLAUDE.md` | Baseline instructions for autonomous operation |
+| `tools/claude-md-generator.sh` | Interactive CLAUDE.md generator — answer 8 questions, get a tailored config |
 | `install.sh` | One-command setup |
 
 ## Quick Start
@@ -94,6 +95,20 @@ rm ~/.claude/hooks/decision-warn.sh
 ```
 
 Then remove the corresponding `hooks` entries from `~/.claude/settings.json`.
+
+## Generate Your CLAUDE.md
+
+Don't know where to start? The generator asks 8 questions and produces a project-specific `CLAUDE.md` with safety rules built in:
+
+```bash
+bash tools/claude-md-generator.sh
+```
+
+Or use defaults for a quick start:
+
+```bash
+bash tools/claude-md-generator.sh --defaults --output ~/.claude/CLAUDE.md
+```
 
 ## Self-Check: Is Your Autonomous Setup Safe?
 
