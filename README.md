@@ -4,13 +4,13 @@
 [![Bash](https://img.shields.io/badge/Language-Bash-4EAA25.svg)](https://www.gnu.org/software/bash/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Hooks-blueviolet.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-**Stop babysitting your AI.** 4 production-tested hooks that let Claude Code run autonomously — catching errors, managing context, and making decisions without asking you every 5 minutes.
+**Spend less time babysitting your AI.** 4 production-tested hooks that let Claude Code run with less supervision — catching errors, managing context, and making decisions without asking you constantly.
 
 ```bash
 git clone https://github.com/yurukusa/claude-code-ops-starter.git && cd claude-code-ops-starter && bash install.sh
 ```
 
-Built from 200+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) with zero manual coding.
+Extracted from 200+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
 
 ### Before vs After
 
@@ -97,16 +97,16 @@ Then remove the corresponding `hooks` entries from `~/.claude/settings.json`.
 
 ## Need More? These 4 Hooks Are the Foundation. The Full System Is the House.
 
-This starter kit catches errors and keeps sessions running. The **full kit** turns Claude Code into an autonomous system that works overnight without you:
+This starter kit catches errors and keeps sessions running. The **full kit** adds the infrastructure for extended autonomous sessions with periodic check-ins:
 
 - **Multi-agent relay** — Two AI agents (Claude Code + Codex) consulting each other in a loop
 - **Stall detection & auto-recovery** — Catches drift, frozen sessions, and cascading failures
 - **Watchdog process** — Monitors agent health and auto-restarts on crash
 - **Task queue system** — YAML-based priority queue with dependency tracking
-- **20+ production hooks** — Activity logging, decision recording, error tracking, and more
-- **Operational playbooks** — Battle-tested across 200+ hours and 15,000 lines of autonomous code
+- **11 production hooks** — Activity logging, decision recording, error tracking, and more
+- **Operational playbooks** — Extracted from 200+ hours and 15,000 lines of autonomous operation
 
-**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-kit-launch&utm_content=graduate-cta)** — 15-minute setup. Your AI runs overnight while you sleep.
+**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-kit-launch&utm_content=graduate-cta)** — 15-minute setup. Significantly reduces how often you need to check in.
 
 ## Background
 
