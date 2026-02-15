@@ -6,8 +6,14 @@
 
 **Spend less time babysitting your AI.** 4 production-tested hooks that let Claude Code run with less supervision — catching errors, managing context, and making decisions without asking you constantly.
 
+<a href="https://github.com/yurukusa/claude-code-ops-starter/blob/main/assets/risk-score-fix-demo.svg"><img src="assets/risk-score-fix-demo.svg" alt="risk-score --fix demo: CRITICAL 16/19 → HIGH 7/19 in 30 seconds" width="700"></a>
+
 ```bash
-git clone https://github.com/yurukusa/claude-code-ops-starter.git && cd claude-code-ops-starter && bash install.sh
+# Try it now (read-only scan, nothing installed)
+curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash
+
+# Auto-fix with free hooks (non-destructive, existing files kept)
+curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash -s -- --fix
 ```
 
 Extracted from 200+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
