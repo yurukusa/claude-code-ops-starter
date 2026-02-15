@@ -127,6 +127,16 @@ curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da
 
 Checks 10 items (CLAUDE.md, hooks, git safety, secrets, etc.) and shows a risk score with links to fixes.
 
+### Auto-fix mode
+
+Diagnose and fix in one command:
+
+```bash
+curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash -s -- --fix
+```
+
+This runs the scan, installs the free hooks, then re-scans to show your improvement (e.g. CRITICAL 14/19 → MODERATE 5/19). Existing files are never overwritten.
+
 ## Self-Check: Is Your Autonomous Setup Safe?
 
 Before adding hooks, check where your current workflow stands. This 10-item checklist covers the most common failure points from 200+ hours of autonomous operation:
