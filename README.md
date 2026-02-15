@@ -95,6 +95,16 @@ rm ~/.claude/hooks/decision-warn.sh
 
 Then remove the corresponding `hooks` entries from `~/.claude/settings.json`.
 
+## Self-Check: Is Your Autonomous Setup Safe?
+
+Before adding hooks, check where your current workflow stands. This 10-item checklist covers the most common failure points from 200+ hours of autonomous operation:
+
+**[Claude Code Ops Self-Check (10 items)](https://gist.github.com/yurukusa/23b172374e2e32bdff7d85d21e0f19a2)** — 5 minutes to read, no signup required.
+
+Covers: context monitoring, dangerous command blocking, session state saving, external send approval, error root cause analysis, and more. Each item includes a real failure example and a fix.
+
+---
+
 ## Need More? These 4 Hooks Are the Foundation. The Full System Is the House.
 
 This starter kit catches errors and keeps sessions running. The **full kit** adds the infrastructure for extended autonomous sessions with periodic check-ins:
