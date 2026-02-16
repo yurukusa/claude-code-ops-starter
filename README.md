@@ -153,18 +153,20 @@ Covers: context monitoring, dangerous command blocking, session state saving, ex
 
 ---
 
-## Need More? These 4 Hooks Are the Foundation. The Full System Is the House.
+## Sleep While Shipping
 
-This starter kit catches errors and keeps sessions running. The **full kit** adds the infrastructure for extended autonomous sessions with periodic check-ins:
+These 4 hooks are the foundation. The full system is what enabled **88 tasks to complete autonomously in one overnight session** — while the human slept.
 
-- **Multi-agent relay** — Two AI agents (Claude Code + Codex) consulting each other in a loop
-- **Stall detection & auto-recovery** — Catches drift, frozen sessions, and cascading failures
-- **Watchdog process** — Monitors agent health and auto-restarts on crash
-- **Task queue system** — YAML-based priority queue with dependency tracking
-- **11 production hooks** — Activity logging, decision recording, error tracking, and more
-- **Operational playbooks** — Extracted from 200+ hours and 15,000 lines of autonomous operation
+The **CC-Codex Ops Kit** adds:
 
-**[Get the full CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-kit-launch&utm_content=graduate-cta)** — 15-minute setup. Significantly reduces how often you need to check in.
+- **9 Scripts** — Agent relay, watchdog, task queue, stall detection & auto-recovery
+- **6 Additional Hooks** — Activity logging, decision recording, error tracking
+- **4 Templates** — CLAUDE.md, mission.md, task-queue.yaml, settings.json
+- **2 Guides** — Step-by-step setup + troubleshooting playbook
+
+Safety Score After Install: **16/19 CRITICAL → 2/19 MODERATE**
+
+**[CC-Codex Ops Kit on Gumroad](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)** — 22 files, 15-minute setup. The same infrastructure that shipped a 15,000-line game autonomously.
 
 ## Background
 
