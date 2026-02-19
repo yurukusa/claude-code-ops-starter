@@ -79,7 +79,7 @@ Then remove the corresponding entries from `~/.claude/settings.json`.
 
 ## The Full Setup
 
-These 2 hooks cover Self-Check items #2 and #4. The remaining items (#7 outbound gate, #8 error RCA, #9 activity logging, and more) are available in the [CC-Codex Ops Kit ($79)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit) — 22 files, 15-minute setup.
+These 2 hooks cover Self-Check items #2 and #4. The remaining items (#7 outbound gate, #8 error RCA, #9 activity logging, and more) are available in the [CC-Codex Ops Kit ($9.99)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit) — 22 files, 15-minute setup.
 
 ## License
 

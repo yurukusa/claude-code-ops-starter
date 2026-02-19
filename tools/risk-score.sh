@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# risk-score.sh — Claude Code Autonomous Operations Risk Score
+# risk-score.sh — Claude Code Autonomous Operations Risk Score (FREE)
 # Checks 10 safety items and outputs a risk score with recommendations.
 # Usage: risk-score.sh          (scan only)
 #        risk-score.sh --fix    (scan, install free hooks, re-scan)
 # No dependencies beyond bash and git. No data sent anywhere.
-# MIT License — https://github.com/yurukusa/claude-code-ops-starter
+# 100% free. Full source: https://github.com/yurukusa/claude-code-ops-starter
+# MIT License
 
 set -euo pipefail
 
@@ -262,16 +263,22 @@ if [[ $SCORE -gt 0 ]]; then
   echo ""
   echo "${BOLD}What to do next:${RESET}"
   if [[ $FIX_MODE -eq 0 ]]; then
-    echo "  1. Auto-fix with free hooks:"
-    echo "     curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash -s -- --fix"
+    echo "  1. Auto-fix (free — installs 4 safety hooks):"
+    echo "     bash risk-score.sh --fix"
     echo ""
   fi
   echo "  Free resources:"
+  echo "  → 4 Free Safety Hooks:  https://github.com/yurukusa/claude-code-ops-starter"
   echo "  → Self-Check (10 items): https://gist.github.com/yurukusa/23b172374e2e32bdff7d85d21e0f19a2"
   echo "  → CLAUDE.md Generator:  https://gist.github.com/yurukusa/9e710dece35d673dd71e678dfa55eaa3"
-  echo "  → 4 Free Safety Hooks:  https://github.com/yurukusa/claude-code-ops-starter"
   echo ""
-  echo "  Want all 10 items covered?"
-  echo "  → CC-Codex Ops Kit (\$79): https://yurukusa.gumroad.com/l/cc-codex-ops-kit"
+  echo "  Want all 10 items covered + context monitor + error tracker?"
+  echo "  → CC-Codex Ops Kit (\$9.99): https://yurukusa.gumroad.com/l/cc-codex-ops-kit"
+  echo ""
+elif [[ $SCORE -eq 0 ]]; then
+  echo ""
+  echo "${GREEN}${BOLD}All clear!${RESET} Your Claude Code setup is well-protected."
+  echo ""
+  echo "  Like this tool? Star the repo: https://github.com/yurukusa/claude-code-ops-starter"
   echo ""
 fi
