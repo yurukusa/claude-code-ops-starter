@@ -166,7 +166,7 @@ The **CC-Codex Ops Kit** adds:
 
 Safety Score After Install: **16/19 CRITICAL → 2/19 MODERATE**
 
-**[CC-Codex Ops Kit on Gumroad](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)** — 22 files, 15-minute setup. The same infrastructure that shipped a 15,000-line game autonomously.
+**[CC-Codex Ops Kit on Gumroad — $14.99](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)** — 10 hooks + 5 templates, 15-minute setup. The same infrastructure that shipped a 15,000-line game autonomously.
 
 ## Background
 
