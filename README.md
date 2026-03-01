@@ -203,18 +203,17 @@ Covers: context monitoring, dangerous command blocking, session state saving, ex
 
 ## Sleep While Shipping
 
-These 4 hooks are the foundation. The full system is what enabled **88 tasks to complete autonomously in one overnight session** — while the human slept.
+These 4 hooks are the foundation. The full system — hooks + watchdog + CLAUDE.md + templates — is what enabled **88 tasks to complete autonomously in one overnight session** while the human slept.
 
-The **CC-Codex Ops Kit** adds:
+**Everything in this repo is free.** If you want a packaged ZIP download without git setup, or want to support the project:
 
-- **9 Scripts** — Agent relay, watchdog, task queue, stall detection & auto-recovery
-- **6 Additional Hooks** — Activity logging, decision recording, error tracking
-- **4 Templates** — CLAUDE.md, mission.md, task-queue.yaml, settings.json
-- **2 Guides** — Step-by-step setup + troubleshooting playbook
+**[CC-Codex Ops Kit on Gumroad — $19](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)** — ZIP of all tools, 15-minute setup, same as the free GitHub repo.
 
-Safety Score After Install: **16/19 CRITICAL → 2/19 MODERATE**
-
-**[CC-Codex Ops Kit on Gumroad — $14.99](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)** — 10 hooks + 5 templates, 15-minute setup. The same infrastructure that shipped a 15,000-line game autonomously.
+What's in the kit:
+- `hooks/` — 4 production hooks (context monitor, no-ask-human, syntax check, decision warn)
+- `tools/` — cc-solo-watchdog, claude-md-generator, risk-score scanner
+- `templates/` — CLAUDE.md baseline
+- `install.sh` — one-command setup
 
 ## Background
 
