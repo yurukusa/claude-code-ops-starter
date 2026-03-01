@@ -16,7 +16,7 @@ curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da
 curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash -s -- --fix
 ```
 
-Extracted from 200+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
+Extracted from 140+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
 
 ### Before vs After
 
@@ -38,6 +38,7 @@ Extracted from 200+ hours of real autonomous operation that shipped a [15,000-li
 | `templates/CLAUDE.md` | Baseline instructions for autonomous operation |
 | `tools/claude-md-generator.sh` | Interactive CLAUDE.md generator — answer 8 questions, get a tailored config |
 | `tools/risk-score.sh` | Check your autonomous operations safety in 10 seconds — scores 10 items, links to fixes |
+| `tools/cc-solo-watchdog.sh` | Idle detector — monitors your Claude pane and sends a nudge when it goes quiet |
 | `install.sh` | One-command setup |
 
 ## Quick Start
@@ -143,9 +144,56 @@ curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da
 
 This runs the scan, installs the free hooks, then re-scans to show your improvement (e.g. CRITICAL 14/19 → MODERATE 5/19). Existing files are never overwritten.
 
+## Autonomous Loop: Keep Claude Moving While You're Away
+
+The 4 hooks stop bad things from happening. `cc-solo-watchdog` keeps good things happening.
+
+When Claude finishes a task and sits idle, the watchdog detects the silence and sends it a nudge — a structured prompt containing your mission focus and task queue. Claude reads the nudge, picks the next task, and continues working. No human required.
+
+```bash
+# Step 1: enable the loop
+touch ~/cc_loop.enabled
+
+# Step 2: start the watchdog (inside a tmux session)
+bash tools/cc-solo-watchdog.sh --bg
+```
+
+The nudge message it sends looks like:
+
+```
+[idle 120s detected / 2026-03-01 14:30]
+
+▶ Decision tree — check in order
+1. Any content scheduled for today or earlier?  → publish it
+2. Any finished but unshipped work?             → ship it
+3. Top item in your task queue?                 → work on it
+4. Blocked 3+ times on one thing?              → log it in pending_for_human.md
+
+▶ Next task
+(your task queue output)
+
+▶ Mission focus
+(first items from your ~/ops/mission.md)
+```
+
+**Settings** (configurable at the top of the script):
+
+| Variable | Default | What it controls |
+|----------|---------|-----------------|
+| `IDLE_THRESHOLD` | 120s | How long before a nudge is sent |
+| `NUDGE_COOLDOWN` | 300s | Minimum gap between nudges |
+| `MAX_NUDGES_PER_HOUR` | 4 | Safety cap on nudge rate |
+| `TMUX_SESSION` | `cc` | tmux session name to watch |
+
+**Prerequisites**: tmux, Claude Code running in a tmux session.
+
+**To stop**: `bash tools/cc-solo-watchdog.sh --stop` or `rm ~/cc_loop.enabled`
+
+---
+
 ## Self-Check: Is Your Autonomous Setup Safe?
 
-Before adding hooks, check where your current workflow stands. This 10-item checklist covers the most common failure points from 200+ hours of autonomous operation:
+Before adding hooks, check where your current workflow stands. This 10-item checklist covers the most common failure points from 140+ hours of autonomous operation:
 
 **[Claude Code Ops Self-Check (10 items)](https://gist.github.com/yurukusa/23b172374e2e32bdff7d85d21e0f19a2)** — 5 minutes to read, no signup required.
 
