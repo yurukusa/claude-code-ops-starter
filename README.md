@@ -4,7 +4,7 @@
 [![Bash](https://img.shields.io/badge/Language-Bash-4EAA25.svg)](https://www.gnu.org/software/bash/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Hooks-blueviolet.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-**Spend less time babysitting your AI.** 4 production-tested hooks that let Claude Code run with less supervision — catching errors, managing context, and making decisions without asking you constantly.
+**Spend less time babysitting your AI.** 10 production-tested hooks + 3 tools + 6 templates that let Claude Code run with less supervision — catching errors, managing context, and making decisions without asking you constantly.
 
 <a href="https://github.com/yurukusa/claude-code-ops-starter/blob/main/assets/risk-score-fix-demo.svg"><img src="assets/risk-score-fix-demo.svg" alt="risk-score --fix demo: CRITICAL 16/19 → HIGH 7/19 in 30 seconds" width="700"></a>
 
@@ -29,17 +29,43 @@ Extracted from 140+ hours of real autonomous operation that shipped a [15,000-li
 
 ## What's Included
 
+### 10 Hooks
+
+| Hook | What it does |
+|------|-------------|
+| `context-monitor.sh` | Tracks context window usage with staged warnings (soft/hard/critical) |
+| `no-ask-human.sh` | Blocks "should I continue?" questions — forces autonomous decisions |
+| `syntax-check.sh` | Auto-runs syntax verification after every file edit (Python, Shell, JSON) |
+| `decision-warn.sh` | Flags destructive commands (`rm -rf`, `git reset --hard`) before execution |
+| `activity-logger.sh` | Logs every tool call with timestamps for post-session audit |
+| `branch-guard.sh` | Prevents direct commits to main/master — forces feature branches |
+| `error-gate.sh` | Blocks continuation after 3+ consecutive errors — forces root cause analysis |
+| `cdp-safety-check.sh` | Validates CDP browser targets before automation runs |
+| `proof-log-session.sh` | Auto-generates session proof logs for accountability |
+| `session-start-marker.sh` | Stamps session metadata on startup for tracking |
+
+### 3 Tools
+
+| Tool | What it does |
+|------|-------------|
+| `claude-md-generator.sh` | Interactive CLAUDE.md generator — answer 8 questions, get a tailored config |
+| `risk-score.sh` | Check your autonomous operations safety in 10 seconds — scores 10 items, links to fixes |
+| `cc-solo-watchdog.sh` | Idle detector — monitors your Claude pane and sends a nudge when it goes quiet |
+
+### 6 Templates + 3 Config Examples
+
 | File | What it does |
 |------|-------------|
-| `hooks/context-monitor.sh` | Tracks context window usage with staged warnings (soft/hard/critical) |
-| `hooks/no-ask-human.sh` | Blocks "should I continue?" questions — forces autonomous decisions |
-| `hooks/syntax-check.sh` | Auto-runs syntax verification after every file edit (Python, Shell, JSON) |
-| `hooks/decision-warn.sh` | Flags destructive commands (`rm -rf`, `git reset --hard`) before execution |
 | `templates/CLAUDE.md` | Baseline instructions for autonomous operation |
-| `tools/claude-md-generator.sh` | Interactive CLAUDE.md generator — answer 8 questions, get a tailored config |
-| `tools/risk-score.sh` | Check your autonomous operations safety in 10 seconds — scores 10 items, links to fixes |
-| `tools/cc-solo-watchdog.sh` | Idle detector — monitors your Claude pane and sends a nudge when it goes quiet |
-| `install.sh` | One-command setup |
+| `templates/CLAUDE-autonomous.md` | Extended CLAUDE.md for fully autonomous sessions |
+| `templates/LESSONS.md` | Self-improvement tracking template |
+| `templates/dod-checklists.md` | Definition of Done checklists for quality gates |
+| `templates/mission.md` | Mission focus template for session continuity |
+| `templates/task-queue.yaml` | Structured task queue format |
+| `examples/settings.json` | Standard settings with all 10 hooks configured |
+| `examples/settings-autonomous.json` | Settings for fully autonomous sessions |
+| `examples/settings-minimal.json` | Minimal 4-hook config for getting started |
+| `install.sh` | One-command setup — installs hooks, copies templates, prints config |
 
 ## Quick Start
 
@@ -203,17 +229,22 @@ Covers: context monitoring, dangerous command blocking, session state saving, ex
 
 ## Sleep While Shipping
 
-These 4 hooks are the foundation. The full system — hooks + watchdog + CLAUDE.md + templates — is what enabled **88 tasks to complete autonomously in one overnight session** while the human slept.
+The full system — 10 hooks + watchdog + templates + examples — is what enabled **88 tasks to complete autonomously in one overnight session** while the human slept.
 
-**Everything in this repo is free.** If you want a packaged ZIP download without git setup, or want to support the project:
+### Free vs. Ops Kit
 
-**[CC-Codex Ops Kit on Gumroad — $19](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)** — ZIP of all tools, 15-minute setup, same as the free GitHub repo.
+| | [Free: claude-code-hooks](https://github.com/yurukusa/claude-code-hooks) | Ops Kit ($19) |
+|---|---|---|
+| Hooks | 10 hooks (copy & configure yourself) | Same 10 hooks, pre-configured |
+| Templates | 5 templates | 6 templates (+ baseline CLAUDE.md) |
+| Tools | — | 3 tools (watchdog, CLAUDE.md generator, risk-score) |
+| Config examples | — | 3 ready-to-use settings.json variants |
+| install.sh | — | One-command setup |
+| Setup time | ~45 min (read docs, configure each hook) | ~15 min (run install.sh, done) |
 
-What's in the kit:
-- `hooks/` — 4 production hooks (context monitor, no-ask-human, syntax check, decision warn)
-- `tools/` — cc-solo-watchdog, claude-md-generator, risk-score scanner
-- `templates/` — CLAUDE.md baseline
-- `install.sh` — one-command setup
+The free repo gives you all the parts. The Ops Kit gives you the assembled, tested, ready-to-run package.
+
+**[Get the Ops Kit — $19](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)**
 
 ## Background
 

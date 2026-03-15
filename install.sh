@@ -20,6 +20,12 @@ HOOKS=(
     "no-ask-human.sh"
     "syntax-check.sh"
     "decision-warn.sh"
+    "activity-logger.sh"
+    "branch-guard.sh"
+    "error-gate.sh"
+    "cdp-safety-check.sh"
+    "proof-log-session.sh"
+    "session-start-marker.sh"
 )
 
 echo "Installing hooks to $HOOKS_DIR ..."
@@ -52,43 +58,30 @@ echo ""
 echo "Hook configuration:"
 echo "  Add these to your $SETTINGS_FILE under \"hooks\":"
 echo ""
-cat << 'SETTINGS'
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "AskUserQuestion",
-        "hooks": [{"type": "command", "command": "~/.claude/hooks/no-ask-human.sh"}]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [{"type": "command", "command": "~/.claude/hooks/decision-warn.sh"}]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [{"type": "command", "command": "~/.claude/hooks/syntax-check.sh"}]
-      },
-      {
-        "matcher": "",
-        "hooks": [{"type": "command", "command": "~/.claude/hooks/context-monitor.sh"}]
-      }
-    ]
-  }
-}
-SETTINGS
+sed 's|/path/to/hooks|~/.claude/hooks|g' "$SCRIPT_DIR/examples/settings.json"
 
 echo ""
 echo "=== Installation complete ==="
 echo ""
 echo "What you got:"
-echo "  - context-monitor.sh     : Tracks context window usage with staged warnings"
-echo "  - no-ask-human.sh        : Blocks AI from asking you questions (autonomous mode)"
-echo "  - syntax-check.sh        : Auto-verifies code after every edit"
-echo "  - decision-warn.sh       : Flags destructive commands before execution"
-echo "  - CLAUDE.md template     : Baseline instructions for autonomous operation"
-echo "  - cc-solo-watchdog.sh    : Idle detector — nudges Claude when it goes quiet"
+echo "  10 hooks:"
+echo "    context-monitor.sh     : Context window usage warnings"
+echo "    no-ask-human.sh        : Blocks AI from asking you questions"
+echo "    syntax-check.sh        : Auto-verifies code after every edit"
+echo "    decision-warn.sh       : Flags destructive commands"
+echo "    activity-logger.sh     : Logs every tool call for audit"
+echo "    branch-guard.sh        : Prevents commits to main/master"
+echo "    error-gate.sh          : Blocks continuation after repeated errors"
+echo "    cdp-safety-check.sh    : Validates CDP browser targets"
+echo "    proof-log-session.sh   : Auto-generates session proof logs"
+echo "    session-start-marker.sh: Stamps session metadata on startup"
+echo ""
+echo "  3 tools:"
+echo "    cc-solo-watchdog.sh    : Idle detector — nudges Claude when it goes quiet"
+echo "    claude-md-generator.sh : Interactive CLAUDE.md generator"
+echo "    risk-score.sh          : Safety score checker (10 items)"
+echo ""
+echo "  6 templates + 3 config examples"
 echo ""
 echo "=== Optional: Enable the Autonomous Loop ==="
 echo ""
