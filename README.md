@@ -244,7 +244,7 @@ The full system — 10 hooks + watchdog + templates + examples — is what enabl
 
 The free repo gives you all the parts. The Ops Kit gives you the assembled, tested, ready-to-run package.
 
-**[Get the Ops Kit — $19](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)**
+**[Get the Ops Kit — $19](https://yurukusa.github.io/cc-ops-kit-landing/?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)**
 
 ## Background
 
