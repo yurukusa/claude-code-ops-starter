@@ -248,13 +248,13 @@ The free repo gives you all the parts. The Ops Kit gives you the assembled, test
 
 ## Background
 
-This toolkit emerged from a real experiment: a non-engineer using Claude Code to build a complete game ([Azure Flame](https://yurukusa.itch.io/azure-flame), 15,000+ lines of Python) with minimal human intervention. Every hook in this repo solved a real problem encountered during autonomous operation.
+This toolkit emerged from a real experiment: a non-engineer using Claude Code to build a complete game (15,000+ lines of Python) with minimal human intervention. Every hook in this repo solved a real problem encountered during autonomous operation.
 
 Read more:
 - [4 Hooks That Let Claude Code Run Autonomously](https://dev.to/yurukusa/4-hooks-that-let-claude-code-run-autonomously-with-zero-babysitting-1748) (dev.to) — deep dive into each hook
 - [5 Design Patterns for LLM Agent Teams](https://dev.to/yurukusa/5-design-patterns-for-llm-agent-teams-from-someone-who-learned-them-the-hard-way-5f7n) (dev.to) — the patterns behind these hooks
-- [How Two AIs Consult Each Other While I Sleep](https://zenn.dev/yurukusa/articles/cc-codex-dual-agent-loop) (Zenn) — multi-agent orchestration
-- [I Spent $200 on AI and Made $2](https://dev.to/yurukusa/i-spent-200-on-ai-and-made-2-what-i-learned-building-a-game-with-claude-code-2b4b) (dev.to) — the full story
+- [Agent Teamsのアーキテクチャ：5エージェント並列運用の実践](https://zenn.dev/yurukusa/articles/5ffe1ad48fde58) (Zenn) — multi-agent orchestration
+- [I Made $2: A Non-Engineer's First Game Sale](https://dev.to/yurukusa/i-made-2-a-non-engineers-first-game-sale-built-entirely-with-ai-3i11) (dev.to) — the full story
 
 ## License
 
