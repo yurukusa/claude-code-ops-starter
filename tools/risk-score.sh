@@ -273,7 +273,7 @@ if [[ $SCORE -gt 0 ]]; then
   echo "  → CLAUDE.md Generator:  https://gist.github.com/yurukusa/9e710dece35d673dd71e678dfa55eaa3"
   echo ""
   echo "  Want all 10 items covered + context monitor + error tracker?"
-  echo "  → CC-Codex Ops Kit (\$9.99): https://yurukusa.gumroad.com/l/cc-codex-ops-kit"
+  echo "  → CC-Codex Ops Kit (\$9.99): https://yurukusa.github.io/cc-ops-kit-landing/"
   echo ""
 elif [[ $SCORE -eq 0 ]]; then
   echo ""
