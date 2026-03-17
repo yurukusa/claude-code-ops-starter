@@ -229,7 +229,7 @@ Covers: context monitoring, dangerous command blocking, session state saving, ex
 
 ## Sleep While Shipping
 
-The full system — 10 hooks + watchdog + templates + examples — is what enabled **88 tasks to complete autonomously in one overnight session** while the human slept.
+The full system — 10 hooks + watchdog + templates + examples — is what enabled **20+ autonomous sessions in a single day** while the human slept.
 
 ### Free vs. Ops Kit
 
