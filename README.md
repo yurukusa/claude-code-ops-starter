@@ -16,7 +16,7 @@ curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da
 curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash -s -- --fix
 ```
 
-Extracted from 140+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
+Extracted from 160+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
 
 ### Before vs After
 
@@ -62,7 +62,7 @@ Extracted from 140+ hours of real autonomous operation that shipped a [15,000-li
 | `templates/dod-checklists.md` | Definition of Done checklists for quality gates |
 | `templates/mission.md` | Mission focus template for session continuity |
 | `templates/task-queue.yaml` | Structured task queue format |
-| `examples/settings.json` | Standard settings with all 10 hooks configured |
+| `examples/settings.json` | Standard settings with all 16 hooks configured |
 | `examples/settings-autonomous.json` | Settings for fully autonomous sessions |
 | `examples/settings-minimal.json` | Minimal 4-hook config for getting started |
 | `install.sh` | One-command setup — installs hooks, copies templates, prints config |
@@ -219,7 +219,7 @@ The nudge message it sends looks like:
 
 ## Self-Check: Is Your Autonomous Setup Safe?
 
-Before adding hooks, check where your current workflow stands. This 10-item checklist covers the most common failure points from 140+ hours of autonomous operation:
+Before adding hooks, check where your current workflow stands. This 10-item checklist covers the most common failure points from 160+ hours of autonomous operation:
 
 **[Claude Code Ops Self-Check (10 items)](https://gist.github.com/yurukusa/23b172374e2e32bdff7d85d21e0f19a2)** — 5 minutes to read, no signup required.
 
@@ -229,13 +229,13 @@ Covers: context monitoring, dangerous command blocking, session state saving, ex
 
 ## Sleep While Shipping
 
-The full system — 10 hooks + watchdog + templates + examples — is what enabled **20+ autonomous sessions in a single day** while the human slept.
+The full system — 16 hooks + watchdog + templates + examples — is what enabled **20+ autonomous sessions in a single day** while the human slept.
 
 ### Free vs. Ops Kit
 
 | | [Free: claude-code-hooks](https://github.com/yurukusa/claude-code-hooks) | Ops Kit ($19) |
 |---|---|---|
-| Hooks | 10 hooks (copy & configure yourself) | Same 10 hooks, pre-configured |
+| Hooks | 16 hooks (copy & configure yourself) | Same 16 hooks, pre-configured |
 | Templates | 5 templates | 6 templates (+ baseline CLAUDE.md) |
 | Tools | — | 3 tools (watchdog, CLAUDE.md generator, risk-score) |
 | Config examples | — | 3 ready-to-use settings.json variants |
