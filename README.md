@@ -4,7 +4,7 @@
 [![Bash](https://img.shields.io/badge/Language-Bash-4EAA25.svg)](https://www.gnu.org/software/bash/)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Hooks-blueviolet.svg)](https://docs.anthropic.com/en/docs/claude-code)
 
-**Spend less time babysitting your AI.** 10 production-tested hooks + 3 tools + 6 templates that let Claude Code run with less supervision — catching errors, managing context, and making decisions without asking you constantly.
+**Spend less time babysitting your AI.** 16 production-tested hooks + 3 tools + 5 templates that let Claude Code run with less supervision — catching errors, managing context, and making decisions without asking you constantly.
 
 <a href="https://github.com/yurukusa/claude-code-ops-starter/blob/main/assets/risk-score-fix-demo.svg"><img src="assets/risk-score-fix-demo.svg" alt="risk-score --fix demo: CRITICAL 16/19 → HIGH 7/19 in 30 seconds" width="700"></a>
 
