@@ -236,7 +236,7 @@ The full system — 16 hooks + watchdog + templates + examples — is what enabl
 | | [Free: claude-code-hooks](https://github.com/yurukusa/claude-code-hooks) | Ops Kit ($19) |
 |---|---|---|
 | Hooks | 16 hooks (copy & configure yourself) | Same 16 hooks, pre-configured |
-| Templates | 5 templates | 6 templates (+ baseline CLAUDE.md) |
+| Templates | 5 templates | 5 templates (+ baseline CLAUDE.md) |
 | Tools | — | 3 tools (watchdog, CLAUDE.md generator, risk-score) |
 | Config examples | — | 3 ready-to-use settings.json variants |
 | install.sh | — | One-command setup |
