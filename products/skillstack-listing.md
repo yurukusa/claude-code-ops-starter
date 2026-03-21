@@ -7,7 +7,7 @@ Claude Code Ops Kit — Production Safety in 15 Minutes
 $19
 
 ## Short Description (for card/preview)
-10 production hooks + 5 templates + 3 exclusive tools. One-command install for autonomous Claude Code safety. Built from 160+ hours of real autonomous operation.
+16 production hooks + 5 templates + 3 exclusive tools. One-command install for autonomous Claude Code safety. Built from 160+ hours of real autonomous operation.
 
 ## Full Description
 
