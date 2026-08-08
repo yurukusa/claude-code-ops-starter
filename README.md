@@ -16,7 +16,7 @@ curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da
 curl -sL https://gist.githubusercontent.com/yurukusa/10c76edee0072e2f08500dd43da30bc3/raw/risk-score.sh | bash -s -- --fix
 ```
 
-Extracted from 160+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame) without the human writing code themselves.
+Extracted from 160+ hours of real autonomous operation that shipped a [15,000-line game](https://yurukusa.itch.io/azure-flame-dungeon) without the human writing code themselves.
 
 ### Before vs After
 
@@ -244,7 +244,7 @@ The full system — 16 hooks + watchdog + templates + examples — is what enabl
 
 The free repo gives you all the parts. The Ops Kit gives you the assembled, tested, ready-to-run package.
 
-**[Get the Ops Kit — $19](https://yurukusa.github.io/cc-ops-kit-landing/?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)**
+**[Get the Ops Kit — pay what you want ($0+)](https://yurukusa.gumroad.com/l/cc-codex-ops-kit?utm_source=github&utm_medium=readme&utm_campaign=ops-starter&utm_content=sleep-while-shipping)**
 
 ## Background
 
